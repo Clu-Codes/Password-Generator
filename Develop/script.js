@@ -36,17 +36,27 @@ var generatePassword = function() {
 
   // this variable will make it easier to call later on + can dynamically filter what someone wants 
   var errBody = upperCase + lowerCase + numerics + specialChars;
-
+  // console.log(errBody);
   if (errBody === "" || errBody === null) {
     window.alert("Please choose at least one character type.");
   }
+  // console.log(passwordInteger);
+  function passRandomizer() {
+    var characters = errBody; 
+    var var1 = ""
+    for (i = 0; i < passwordInteger; i++) {
+      var1 = var1 + characters[(Math.floor(Math.random() * errBody.length))];
+    }
+    // console.log(var1);
+    return var1;
+  } // console.log(passRandomizer());
+  return passRandomizer();
 };
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  debugger;
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
