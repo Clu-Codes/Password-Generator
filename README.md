@@ -8,3 +8,6 @@ Languages Used: HTML, CSS, & JavaScript
 
 ## Website
 https://clu-codes.github.io/Password-Generator/
+
+## Image
+![An example of the Password Generator in action](./Images/Password_Generator_Screenshot.png)
