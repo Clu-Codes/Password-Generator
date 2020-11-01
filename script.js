@@ -1,9 +1,11 @@
 // Assignment code here
 var generatePassword = function() {
   var passwordInteger = window.prompt("How many characters do you want your password to be? Please enter a number between 8-128.");
+  // debugger;
   if (passwordInteger < 8 || passwordInteger > 128) {
     window.alert("Please enter a number between 8 and 128");
-    generatePassword();
+    return "";
+    // generatePassword();
   };
   var upperCase = window.confirm("Do you want to include Uppercases in your password?");
   if (upperCase) {
@@ -50,7 +52,9 @@ var generatePassword = function() {
    
     return var1;
   } 
-  return passRandomizer();
+  var randomPass = passRandomizer();
+  console.log(passRandomizer());
+  return randomPass;
 };
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -58,11 +62,11 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log(password);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
